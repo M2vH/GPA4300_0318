@@ -14,8 +14,18 @@ public:
 	/// <summary>
 	/// constructor
 	/// </summary>
+	Dog() : Dog("Dog") {}
+
+	/// <summary>
+	/// constructor
+	/// </summary>
 	/// <param name="_name">name of cat</param>
-	Dog(const char* _name) : Animal(_name) {}
+	Dog(const char* _name) : Animal(_name)
+	{
+		m_health = 150;
+		m_strength = 25;
+		m_defense = 7;
+	}
 #pragma endregion
 
 #pragma region public override function
@@ -25,7 +35,7 @@ public:
 	void Eat() override;
 
 	/// <summary>
-	/// make noise function
+	/// noise of cat
 	/// </summary>
 	void MakeNoise() override;
 #pragma endregion

@@ -14,8 +14,18 @@ public:
 	/// <summary>
 	/// constructor
 	/// </summary>
+	Cat() : Cat("Cat") {}
+
+	/// <summary>
+	/// constructor
+	/// </summary>
 	/// <param name="_name">name of cat</param>
-	Cat(const char* _name) : Animal(_name) {}
+	Cat(const char* _name) : Animal(_name)
+	{
+		m_health = 250;
+		m_strength = 10;
+		m_defense = 20;
+	}
 #pragma endregion
 
 #pragma region public override function
