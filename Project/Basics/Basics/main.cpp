@@ -19,6 +19,8 @@
 /// <returns>code of shut down</returns>
 int main() 
 {
+	cout << "Program started" << endl;
+
 	int neu;
 	cin >> neu;
 
