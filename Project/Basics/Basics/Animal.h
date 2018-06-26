@@ -67,6 +67,11 @@ public:
 			m_alive = false;
 			m_health = 0;
 		}
+
+		else
+		{
+			m_health -= _damage;
+		}
 	}
 
 	/// <summary>
