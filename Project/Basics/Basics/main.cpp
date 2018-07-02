@@ -16,8 +16,8 @@
 	int i = 2;			\
 	i += x;				\
 	PRINT(i, y)
-#define CATS_COUNT 1000
-#define DOGS_COUNT 1000
+#define CATS_COUNT 10
+#define DOGS_COUNT 10
 #pragma endregion
 
 /// <summary>
@@ -26,22 +26,22 @@
 /// <param name="_cats">list of cats</param>
 /// <param name="_dogs">list of dogs</param>
 /// <param name="_catAttack">if cats are attackers</param>
-void AttackAnimal(list<Cat*> _cats, list<Dog*> _dogs, bool _catAttack)
+void AttackAnimal(list<Cat*>* _cats, list<Dog*>* _dogs, bool _catAttack)
 {
 	// if cats are attackers
 	if (_catAttack)
 	{
 		// if no dogs left return
-		if (_dogs.size() <= 0)
+		if (_dogs->size() <= 0)
 			return;
 
 		// cat attack dog
-		_cats.front()->Attack(_dogs.front());
+		_cats->front()->Attack(_dogs->front());
 
 		// if dog front not alive kill dog
-		if (!_dogs.front()->GetAlive())
+		if (!_dogs->front()->GetAlive())
 		{
-			_dogs.pop_front();
+			_dogs->pop_front();
 		}
 	}
 
@@ -49,16 +49,16 @@ void AttackAnimal(list<Cat*> _cats, list<Dog*> _dogs, bool _catAttack)
 	else
 	{
 		// if no cats left return
-		if (_cats.size() <= 0)
+		if (_cats->size() <= 0)
 			return;
 
 		// dog attack cat
-		_dogs.front()->Attack(_cats.front());
+		_dogs->front()->Attack(_cats->front());
 
 		// if cat front not alive kill cat
-		if (!_cats.front()->GetAlive())
+		if (!_cats->front()->GetAlive())
 		{
-			_cats.pop_front();
+			_cats->pop_front();
 		}
 	}
 }
@@ -125,22 +125,35 @@ int main()
 		if (rand() % 2)
 		{
 			// cat attacks dog
-			AttackAnimal(pCats, pDogs, true);
+			AttackAnimal(&pCats, &pDogs, true);
 
-			// dog attack cat
-			AttackAnimal(pCats, pDogs, false);
+			// if no list is empty
+			if(pCats.size() > 0 && pDogs.size() > 0)
+				// dog attack cat
+				AttackAnimal(&pCats, &pDogs, false);
 		}
 
 		else
 		{
 			// dog attack cat
-			AttackAnimal(pCats, pDogs, false);
+			AttackAnimal(&pCats, &pDogs, false);
 
-			// cat attacks dog
-			AttackAnimal(pCats, pDogs, true);
+			// if no list is empty
+			if (pCats.size() > 0 && pDogs.size() > 0)
+				// cat attacks dog
+				AttackAnimal(&pCats, &pDogs, true);
 		}
 
 	}
+
+	// increase round number
+	roundNumber++;
+
+	// output
+	cout << "-----Round: " << roundNumber << "-----" << endl;
+	cout << "cat count: " << pCats.size() << endl;
+	cout << "dog count: " << pDogs.size() << endl;
+	cout << "-------------------------" << endl;
 
 	// char array aneinander hängen
 	char* text1 = "123456";
