@@ -1,57 +1,34 @@
-#include <stdio.h>
-#include <SDL.h>
+#pragma region project include
+#include "Engine.h"
+#pragma endregion
 
-#define SCREEN_WIDTH 640
-#define SCREEN_HEIGHT 480
-
+/// <summary>
+/// entry point of application
+/// </summary>
+/// <param name="argc">count of parameter</param>
+/// <param name="argv">parameter</param>
+/// <returns>code of shut down</returns>
 int main(int argc, char* argv[])
 {
-	// window to render to
-	SDL_Window* pWindow;
+	// create engine
+	CEngine engine;
 
-	// surface of window
-	SDL_Surface* pSurface;
-
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
+	// init engine and load images
+	if (engine.Init() && engine.Load())
 	{
-		printf("SDL not initialized! Error: %s\n", SDL_GetError());
+		// run engine
+		engine.Run();
 	}
 
+	// not initialized or loaded
 	else
 	{
-		pWindow = SDL_CreateWindow(
-			"Natural Engine",
-			SDL_WINDOWPOS_CENTERED,
-			SDL_WINDOWPOS_CENTERED,
-			SCREEN_WIDTH,
-			SCREEN_HEIGHT,
-			SDL_WINDOW_SHOWN);
-
-		if (!pWindow)
-		{
-			printf("Window could not be created! Error: %s\n", SDL_GetError());
-
-			return 101;
-		}
-
-		pSurface = SDL_GetWindowSurface(pWindow);
-
-		if (!pSurface)
-		{
-			printf("Surface could not be created! Error: %s\n", SDL_GetError());
-
-			return 102;
-		}
-
-		SDL_FillRect(
-			pSurface,
-			nullptr,
-			SDL_MapRGB(
-				pSurface->format,
-				0x00,
-				0x00,
-				0x00));
+		return 1;
 	}
-	
+
+	// clean engine
+	engine.Clean();
+
+	// shutdown correctly
 	return 0;
 }
