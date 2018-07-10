@@ -17,6 +17,15 @@
     <ClCompile Include="Texture.cpp">
       <Filter>Engine\Texture</Filter>
     </ClCompile>
+    <ClCompile Include="CContentManagement.cpp">
+      <Filter>Engine\ContentManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="TexturedObject.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -46,6 +55,15 @@
     <Filter Include="Engine\Texture">
       <UniqueIdentifier>{a9350118-f0c3-41c3-8b8c-8a548a0b2df2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\ContentManagement">
+      <UniqueIdentifier>{a5a38019-80c4-4c16-aa0b-ff01012afd66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Object">
+      <UniqueIdentifier>{e8934eff-708c-4280-a30b-ddda47208cff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Core">
+      <UniqueIdentifier>{0a01c55e-0121-469e-91dc-c986a4f40af2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
@@ -71,6 +89,18 @@
     </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Engine\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentManagement.h">
+      <Filter>Engine\ContentManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Engine\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="TexturedObject.h">
+      <Filter>Engine\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

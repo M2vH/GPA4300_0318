@@ -5,10 +5,10 @@
 
 #pragma region project include
 #include "Engine.h"
-#include "MainScene.h"
 #include "Renderer.h"
-#include "Texture.h"	/// TODO: DELETE
-#include "Rect.h"		/// TODO: DELETE
+#include "ContentManagement.h"
+#include "Game.h"
+#include "Scene.h"
 #pragma endregion
 
 #pragma region constructor
@@ -79,6 +79,18 @@ bool CEngine::Init()
 			return false;
 		}
 
+		// create content management system
+		m_pCM = new CContentManagement();
+
+		// if content management system not created
+		if (!m_pCM)
+		{
+			// error message
+			LOG_ERROR("Content Management System could not be created!", SDL_GetError());
+
+			return false;
+		}
+
 		// engine is running
 		m_isRunning = true;
 
@@ -89,8 +101,8 @@ bool CEngine::Init()
 // load content
 bool CEngine::Load()
 {
-	// change scene to new scene
-	ChangeScene(new GMainScene(this));
+	// create game
+	GGame::Get()->Init();
 
 	return true;
 }
@@ -144,7 +156,7 @@ void CEngine::ChangeScene(CScene * _pScene)
 	m_pScene = _pScene;
 
 	// initialize new scene
-	m_pScene->Init(m_pRenderer->GetSDLRenderer());
+	m_pScene->Init();
 }
 #pragma endregion
 
@@ -152,7 +164,8 @@ void CEngine::ChangeScene(CScene * _pScene)
 // update every frame
 void CEngine::Update()
 {
-
+	// update content
+	m_pCM->Update();
 }
 
 // render every frame
@@ -161,14 +174,8 @@ void CEngine::Render()
 	// clear current screen
 	m_pRenderer->ClearScreen();
 
-	/// <summary>
-	/// TODO: DELETE
-	/// </summary>
-	for (int i = 0; i < 4; i++)
-	{
-		CTexture texture = CTexture("PP.png", m_pRenderer);
-		m_pRenderer->RenderTexture(&texture, SRect(i * 150, i * 50, 640, 360));
-	}
+	// render content
+	m_pCM->Render(m_pRenderer);
 
 	// present rendered image
 	m_pRenderer->Present();
