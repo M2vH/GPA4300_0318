@@ -6,6 +6,7 @@ class SDL_Surface;
 class CRenderer;
 class CScene;
 class CContentManagement;
+class SDL_Events;
 #pragma endregion
 
 #pragma region macro
@@ -126,7 +127,8 @@ private:
 	/// active scene
 	/// </summary>
 	CScene* m_pScene;
-#pragma enregion
+
+#pragma endregion
 
 #pragma region private function
 	/// <summary>

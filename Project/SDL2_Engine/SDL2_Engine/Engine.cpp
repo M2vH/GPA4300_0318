@@ -1,6 +1,7 @@
 #pragma region system include
 #include <iostream>
 #include <SDL.h>
+#include <SDL_events.h>
 #pragma endregion
 
 #pragma region project include
@@ -113,6 +114,22 @@ void CEngine::Run()
 	// as long as engine running
 	while (m_isRunning)
 	{
+#pragma region m2vh
+		// catching the QUIT event
+		SDL_Event m_MyEvent;
+
+		SDL_PollEvent(&m_MyEvent);
+		switch (m_MyEvent.type)
+		{
+			case SDL_QUIT:
+			{
+				m_isRunning = false;
+				break;
+			}
+		}
+#pragma endregion
+
+
 		Update();
 
 		Render();
