@@ -34,7 +34,8 @@ void CTexturedObject::Update()
 {
 	// TODO DELETE
 	m_position.X += 1;
-	m_position.Y += 1;
+	m_position.X = (int)(m_position.X)%1280;
+	m_position.Y = 100;
 
 	// set position of rect
 	m_rect.x = m_position.X;
