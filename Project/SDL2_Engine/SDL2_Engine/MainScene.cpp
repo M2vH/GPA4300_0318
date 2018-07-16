@@ -9,7 +9,7 @@
 void GMainScene::Init()
 {
 	// create textured object
-	CTexturedObject* pObj = new CTexturedObject(SVector2(100, 45), SVector2(32, 32), 
+	CTexturedObject* pObj = new CTexturedObject(SVector2(-100, 45), SVector2(32, 32), 
 		CEngine::Get()->GetRenderer(), "PP.png");
 
 	// add object to cm

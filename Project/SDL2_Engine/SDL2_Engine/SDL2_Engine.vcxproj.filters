@@ -26,6 +26,7 @@
     <ClCompile Include="TexturedObject.cpp">
       <Filter>Engine\Object</Filter>
     </ClCompile>
+    <ClCompile Include="SlideTexture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -102,5 +103,6 @@
     <ClInclude Include="TexturedObject.h">
       <Filter>Engine\Object</Filter>
     </ClInclude>
+    <ClInclude Include="SlideTexture.h" />
   </ItemGroup>
 </Project>

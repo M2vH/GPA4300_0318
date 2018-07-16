@@ -6,7 +6,7 @@
 
 #pragma region constructor
 // constructor
-CTexturedObject::CTexturedObject(SVector2 _pos, SVector2 _size, CRenderer * _pRenderer, 
+CTexturedObject::CTexturedObject(SVector2 _pos, SVector2 _size, CRenderer * _pRenderer,
 	const char * _pFileName)
 {
 	// set position and rect
@@ -34,7 +34,10 @@ void CTexturedObject::Update()
 {
 	// TODO DELETE
 	m_position.X += 1;
-	m_position.X = (int)(m_position.X)%1280;
+	if (m_position.X > 0)
+	{
+		m_position.X = (int)(m_position.X) % 1280;
+	}
 	m_position.Y = 100;
 
 	// set position of rect
