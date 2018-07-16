@@ -90,6 +90,14 @@ public:
 	/// </summary>
 	SVector2 m_offset;
 
+	SVector2 m_windowSize;
+
+	SVector2 m_posCenter;
+
+	SVector2 m_posLeft;
+
+	SVector2 m_posRight;
+
 	/// <summary>
 	/// outline rect that will be visible
 	/// </summary>
@@ -103,15 +111,15 @@ public:
 	/// <summary>
 	/// center Object to render
 	/// </summary>
-	CTexturedObject m_TexObjectCenter;
+	CTexturedObject* m_pTexObjectCenter;
 	/// <summary>
 	/// left object to render
 	/// </summary>
-	CTexturedObject m_TexObjectLeft;
+	CTexturedObject* m_pTexObjectLeft;
 	/// <summary>
 	/// right object to render
 	/// </summary>
-	CTexturedObject m_TexObjectRight;
+	CTexturedObject* m_pTexObjectRight;
 #pragma endregion
 
 

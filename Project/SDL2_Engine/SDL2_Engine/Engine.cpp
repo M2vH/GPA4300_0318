@@ -121,11 +121,11 @@ void CEngine::Run()
 		SDL_PollEvent(&m_MyEvent);
 		switch (m_MyEvent.type)
 		{
-			case SDL_QUIT:
-			{
-				m_isRunning = false;
-				break;
-			}
+		case SDL_QUIT:
+		{
+			m_isRunning = false;
+			// break;
+		}
 		}
 #pragma endregion
 
@@ -151,7 +151,10 @@ void CEngine::Clean()
 
 	// free sdl components
 	SDL_FreeSurface(m_pSurface);
-	SDL_DestroyWindow(m_pWindow);
+	if (m_pWindow)
+	{
+		SDL_DestroyWindow(m_pWindow);
+ 	}
 }
 
 // change active scene
