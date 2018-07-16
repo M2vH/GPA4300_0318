@@ -66,5 +66,10 @@ protected:
 	/// position of object
 	/// </summary>
 	SVector2 m_position;
+
+	/// <summary>
+	/// angle of object
+	/// </summary>
+	float m_angle;
 #pragma endregion
 };
