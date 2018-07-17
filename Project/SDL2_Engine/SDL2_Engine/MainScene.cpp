@@ -17,7 +17,7 @@ void GMainScene::Init()
 		SVector2(0, 0),
 		SVector2(0, 0),
 		SVector2(1280, 720),
-		CEngine::Get()->GetRenderer(), "PP.png"
+		CEngine::Get()->GetRenderer(), "Texture/Background/T_backg_L1_1280x720.png"
 	);
 	// add object to cm
 	CEngine::Get()->GetCM()->AddPersistantObject(pObj);
