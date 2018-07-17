@@ -9,13 +9,22 @@
 void GMainScene::Init()
 {
 	// create textured object
-	GPlayer* pObj = new GPlayer(SVector2(100, 45), SVector2(68, 92),
-		CEngine::Get()->GetRenderer(), "Texture/Character/Player/T_Samus_Idle.png");
+	GPlayer* pObj = new GPlayer(SVector2(0, 0), SVector2(1280, 720),
+		CEngine::Get()->GetRenderer(), "Texture/Background/T_backg_L1_1280x720.png");
 
-	pObj->SetSpeed(1.0f);
+	pObj->SetSpeed(2.0f);
 
 	// add object to cm
 	CEngine::Get()->GetCM()->AddPersistantObject(pObj);
+
+	// create 2nd player object
+	GPlayer* pObj2 = new GPlayer(SVector2(0, 0), SVector2(1280, 720),
+		CEngine::Get()->GetRenderer(), "Texture/Background/T_backg_L0_1280x720.png");
+
+	pObj2->SetSpeed(1.0f);
+
+	// add object to cm
+	CEngine::Get()->GetCM()->AddPersistantObject(pObj2);
 }
 
 // cleaning up scene

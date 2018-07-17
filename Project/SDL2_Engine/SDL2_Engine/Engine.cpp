@@ -135,7 +135,10 @@ void CEngine::Clean()
 
 	// free sdl components
 	SDL_FreeSurface(m_pSurface);
-	SDL_DestroyWindow(m_pWindow);
+	if (m_pWindow)
+	{
+		SDL_DestroyWindow(m_pWindow);
+	}
 }
 
 // change active scene
