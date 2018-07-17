@@ -35,6 +35,9 @@
     <ClCompile Include="Player.cpp">
       <Filter>Game\Player</Filter>
     </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Game\World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -78,6 +81,9 @@
     </Filter>
     <Filter Include="Game\Player">
       <UniqueIdentifier>{f8fddc9d-2397-4ad5-8dae-21dd3d36b48d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\World">
+      <UniqueIdentifier>{2ccc4030-49af-471d-8ec7-d65be9f331c8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +131,12 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Game\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Game\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Macro.h">
+      <Filter>Engine\Utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

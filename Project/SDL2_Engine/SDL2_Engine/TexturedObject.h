@@ -82,6 +82,30 @@ public:
 	/// </summary>
 	/// <param name="_rect">rect to set</param>
 	inline void SetRect(SRect _rect) { m_rect = _rect; }
+	
+	/// <summary>
+	/// get source rect
+	/// </summary>
+	/// <returns>source rect of object</returns>
+	inline SRect GetSrcRect() { return m_srcRect; }
+
+	/// <summary>
+	/// set source rect
+	/// </summary>
+	/// <param name="_rect">rect to set</param>
+	inline void SetSrcRect(SRect _rect) { m_srcRect = _rect; }
+
+	/// <summary>
+	/// get mirror
+	/// </summary>
+	/// <returns>mirror value of object</returns>
+	inline SVector2 GetMirror() { return m_mirror; }
+	
+	/// /// <summary>
+	/// set mirror
+	/// </summary>
+	/// <param name="_mirror">value to set</param>
+	inline void SetMirror(SVector2 _mirror) { m_mirror = _mirror; }
 
 	/// <summary>
 	/// get texture
@@ -96,6 +120,11 @@ protected:
 	/// rect of texture
 	/// </summary>
 	SRect m_rect;
+
+	/// <summary>
+	/// source rect of texture
+	/// </summary>
+	SRect m_srcRect;
 
 	/// <summary>
 	/// mirror vector2

@@ -185,6 +185,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TexturedObject.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ContentManagement.h" />
@@ -192,6 +193,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="Game.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Macro.h" />
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="MoveObject.h" />
     <ClInclude Include="Object.h" />
@@ -202,6 +204,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TexturedObject.h" />
     <ClInclude Include="Vector2.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
