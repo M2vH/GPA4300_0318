@@ -90,16 +90,28 @@ public:
 	/// </summary>
 	SVector2 m_offset;
 
+	/// <summary>
+	/// size of window
+	/// </summary>
 	SVector2 m_windowSize;
 
+	/// <summary>
+	/// calculated position of center texture
+	/// </summary>
 	SVector2 m_posCenter;
 
+	/// <summary>
+	/// calculated position of left texture
+	/// </summary>
 	SVector2 m_posLeft;
 
+	/// <summary>
+	/// calculated position of right texture
+	/// </summary>
 	SVector2 m_posRight;
 
 	/// <summary>
-	/// outline rect that will be visible
+	/// stores the starting outline rect that will be visible.
 	/// </summary>
 	SRect m_outline;
 
