@@ -98,6 +98,14 @@ protected:
 	SRect m_rect;
 
 	/// <summary>
+	/// mirror vector2
+	/// x != 0 -> mirror horizontal
+	/// y != 0 -> mirror vertical
+	/// if x != 0 -> ignore y
+	/// </summary>
+	SVector2 m_mirror;
+
+	/// <summary>
 	/// texture of object
 	/// </summary>
 	CTexture* m_pTexture = nullptr;

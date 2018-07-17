@@ -32,11 +32,6 @@ CTexturedObject::~CTexturedObject()
 // update every frame
 void CTexturedObject::Update()
 {
-	// TODO DELETE
-	m_position.X += 1;
-	m_position.X = (int)(m_position.X)%1280;
-	m_position.Y = 100;
-
 	// set position of rect
 	m_rect.x = m_position.X;
 	m_rect.y = m_position.Y;
@@ -46,6 +41,6 @@ void CTexturedObject::Update()
 void CTexturedObject::Render(CRenderer * _pRenderer)
 {
 	// render texture
-	_pRenderer->RenderTexture(m_pTexture, m_rect);
+	_pRenderer->RenderTexture(m_pTexture, m_rect, m_mirror, m_angle);
 }
 #pragma endregion

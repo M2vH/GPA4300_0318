@@ -1,6 +1,6 @@
 #pragma region project include
 #include "MainScene.h"
-#include "TexturedObject.h"
+#include "Player.h"
 #include "ContentManagement.h"
 #pragma endregion
 
@@ -9,8 +9,10 @@
 void GMainScene::Init()
 {
 	// create textured object
-	CTexturedObject* pObj = new CTexturedObject(SVector2(100, 45), SVector2(32, 32), 
-		CEngine::Get()->GetRenderer(), "PP.png");
+	GPlayer* pObj = new GPlayer(SVector2(100, 45), SVector2(68, 92),
+		CEngine::Get()->GetRenderer(), "Texture/Character/Player/T_Samus_Idle.png");
+
+	pObj->SetSpeed(1.0f);
 
 	// add object to cm
 	CEngine::Get()->GetCM()->AddPersistantObject(pObj);

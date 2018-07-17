@@ -9,6 +9,7 @@
 #include "ContentManagement.h"
 #include "Game.h"
 #include "Scene.h"
+#include "Input.h"
 #pragma endregion
 
 #pragma region constructor
@@ -164,6 +165,24 @@ void CEngine::ChangeScene(CScene * _pScene)
 // update every frame
 void CEngine::Update()
 {
+	// refresh input state
+	CInput::RefreshState();
+
+	// create sdl event
+	SDL_Event e;
+
+	// while getting event
+	while (SDL_PollEvent(&e))
+	{
+		// if event quit set running false
+		if (e.type == SDL_EventType::SDL_QUIT)
+			m_isRunning = false;
+
+		// parse event to input class
+		if (e.type == SDL_EventType::SDL_KEYDOWN || e.type == SDL_EventType::SDL_KEYUP)
+			CInput::ParseEvent(e);
+	}
+
 	// update content
 	m_pCM->Update();
 }
