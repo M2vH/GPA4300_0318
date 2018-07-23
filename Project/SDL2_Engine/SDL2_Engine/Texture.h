@@ -31,6 +31,9 @@ public:
 	/// </summary>
 	/// <returns>sdl texture</returns>
 	inline SDL_Texture* GetSDLTexture() { return m_pTexture; }
+
+	// // m2vh TODO: delete;
+	// inline void SetSDLTexture(SDL_Texture* _texture) { m_pTexture = _texture; }
 #pragma endregion
 
 private:

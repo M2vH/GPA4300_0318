@@ -38,6 +38,7 @@
     <ClCompile Include="World.cpp">
       <Filter>Game\World</Filter>
     </ClCompile>
+    <ClCompile Include="TextDisplay.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -138,5 +139,6 @@
     <ClInclude Include="Macro.h">
       <Filter>Engine\Utility</Filter>
     </ClInclude>
+    <ClInclude Include="TextDisplay.h" />
   </ItemGroup>
 </Project>

@@ -2,6 +2,9 @@
 #include <iostream>
 #include <SDL.h>
 #pragma endregion
+#pragma region m2vh include
+#include <SDL_ttf.h>
+#pragma endregion
 
 #pragma region project include
 #include "Engine.h"
@@ -34,6 +37,16 @@ bool CEngine::Init()
 
 		return false;
 	}
+#pragma region m2vh
+	else if (TTF_Init()==-1)
+	{
+		// error message
+		LOG_ERROR("SDL TTF not initialized!", SDL_GetError());
+
+		return false;
+	}
+#pragma endregion
+
 
 	// sdl initialized
 	else
