@@ -1,6 +1,8 @@
 #pragma region project include
 #include "Player.h"
 #include "Input.h"
+#include "Engine.h"
+#include "Renderer.h"
 #pragma endregion
 
 #pragma region public override function
@@ -41,6 +43,11 @@ void GPlayer::Update()
 
 	// update parent
 	CMoveObject::Update();
+
+	// set position of camera
+	CEngine::Get()->GetRenderer()->SetCamera(
+		SVector2(m_position.X + PLAYER_WIDTH / 2, m_position.Y + PLAYER_HEIGHT / 2)
+	);
 }
 
 // render every frame
