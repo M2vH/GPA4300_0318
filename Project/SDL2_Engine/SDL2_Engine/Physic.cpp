@@ -7,7 +7,7 @@
 bool CPhysic::RectRectCollision(SRect _rectOne, SRect _rectTwo)
 {
 	// if first rect is right from second rect
-	if (_rectOne.x > _rectTwo.x - _rectTwo.w)
+	if (_rectOne.x > _rectTwo.x + _rectTwo.w)
 		return false;
 
 	// if first rect is left from second rect
