@@ -6,22 +6,23 @@
 // check collision of two rects
 bool CPhysic::RectRectCollision(SRect _rectOne, SRect _rectTwo)
 {
-	// if first rect is right from second rect
-	if (_rectOne.x > _rectTwo.x - _rectTwo.w)
+	// if first rect x is higher than second rect x + width
+	if (_rectOne.x > _rectTwo.x + _rectTwo.w)
 		return false;
 
-	// if first rect is left from second rect
-	if (_rectOne.x + _rectOne.w < _rectTwo.x)
+	// if second rect x is higher than first rect x + width
+	if (_rectTwo.x > _rectOne.x + _rectOne.w)
 		return false;
 
-	// if first rect is lower than second rect
+	// if first rect y is higher than second rect y + height
 	if (_rectOne.y > _rectTwo.y + _rectTwo.h)
 		return false;
 
-	// if first rect is higher than second rect
-	if (_rectOne.y + _rectOne.h < _rectTwo.y)
+	// if second rect y is higher than first rect y + height
+	if (_rectTwo.y > _rectOne.y + _rectOne.h)
 		return false;
 
-	// collision
+	// if collision return true
 	return true;
+
 }
