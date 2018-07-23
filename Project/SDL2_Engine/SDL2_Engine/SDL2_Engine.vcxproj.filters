@@ -38,6 +38,9 @@
     <ClCompile Include="World.cpp">
       <Filter>Game\World</Filter>
     </ClCompile>
+    <ClCompile Include="Physic.cpp">
+      <Filter>Engine\Physic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -84,6 +87,9 @@
     </Filter>
     <Filter Include="Game\World">
       <UniqueIdentifier>{2ccc4030-49af-471d-8ec7-d65be9f331c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Physic">
+      <UniqueIdentifier>{25468902-10eb-451a-9001-a0e1a8193d0b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +143,12 @@
     </ClInclude>
     <ClInclude Include="Macro.h">
       <Filter>Engine\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>Engine\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Physic.h">
+      <Filter>Engine\Physic</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

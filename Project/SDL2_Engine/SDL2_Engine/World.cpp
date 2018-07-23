@@ -83,18 +83,33 @@ void GWorld::Init()
 		{
 		// if dirt set position of texture in atlas map
 		case 'X':
+		{
 			xPosOfTexture = WORLD_BLOCK_ATLAS_WIDTH;
+
+			// set collision type to wall
+			pObj->SetColType(ECollisionType::WALL);
 			break;
+		}
 
 		// if way set position of texture in atlas map
 		case 'W':
+		{
 			xPosOfTexture = 2 * WORLD_BLOCK_ATLAS_WIDTH;
+			
+			// set collision type to wall
+			pObj->SetColType(ECollisionType::WALL);
 			break;
+		}
 
 		// if lava set position of texture in atlas map
 		case 'L':
+		{
 			xPosOfTexture = 3 * WORLD_BLOCK_ATLAS_WIDTH;
+			
+			// set collision type to wall
+			pObj->SetColType(ECollisionType::WALL);
 			break;
+		}
 
 		case 'S':
 		{
@@ -108,6 +123,7 @@ void GWorld::Init()
 			// set player values
 			pPlayer->SetSpeed(PLAYER_SPEED);
 			pPlayer->SetMirror(PLAYER_MIRROR);
+			pPlayer->SetColType(ECollisionType::MOVE);
 
 			// add player to persistant list
 			CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
