@@ -2,6 +2,7 @@
 #pragma region project include
 #include "Object.h"
 #include "Rect.h"
+#include "Enum.h"
 #pragma endregion
 
 #pragma region forward decleration
@@ -72,6 +73,24 @@ public:
 
 #pragma region public inline function
 	/// <summary>
+	/// set object rendered in world
+	/// </summary>
+	/// <param name="_inWorld">in world or not</param>
+	inline void SetInWorld(bool _inWorld) { m_inWorld = _inWorld; }
+
+	/// <summary>
+	/// get collision type of object
+	/// </summary>
+	/// <returns>collision type</returns>
+	inline ECollisionType GetColType() { return m_colType; }
+
+	/// <summary>
+	/// set collision type of object
+	/// </summary>
+	/// <param name="_colType">collision type</param>
+	void SetColType(ECollisionType _colType) { m_colType = _colType; }
+
+	/// <summary>
 	/// get rect
 	/// </summary>
 	/// <returns>rect of object</returns>
@@ -115,6 +134,18 @@ public:
 #pragma endregion
 
 protected:
+#pragma region protected primitive variable
+	/// <summary>
+	/// if object is rendered in screen or world space
+	/// </summary>
+	bool m_inWorld = true;
+
+	/// <summary>
+	/// collision type
+	/// </summary>
+	ECollisionType m_colType;
+#pragma endregion
+
 #pragma region protected variable
 	/// <summary>
 	/// rect of texture

@@ -64,8 +64,9 @@ public:
 	/// <param name="_srcRect">source rect from image</param>
 	/// <param name="_mirror">mirror value</param>
 	/// <param name="_angle">angle of destination rect</param>
+	/// <param name="_inWorld">texture rendered in world or not</param>
 	void RenderTexture(CTexture* _pTexture, SRect _destRect, SRect _srcRect, 
-		SVector2 _mirror = SVector2(), float _angle = 0.0f);
+		SVector2 _mirror = SVector2(), float _angle = 0.0f, bool _inWorld = true);
 
 	/// <summary>
 	/// present rendered image
