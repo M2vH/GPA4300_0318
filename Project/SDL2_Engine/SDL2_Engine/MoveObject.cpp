@@ -3,8 +3,6 @@
 #include "Engine.h"
 #include "ContentManagement.h"
 #include "Physic.h"
-#include "Macro.h"		///TODO: DELETE
-#include <cstdio>
 #pragma endregion
 
 #pragma region public override function
@@ -69,7 +67,7 @@ void CMoveObject::Update()
 		return;
 
 	// add position by movement * speed
-	m_position = m_position + m_movement * m_speed;
+	m_position = nextPos;
 
 	// set position of rect
 	m_rect.x = m_position.X;
