@@ -60,7 +60,7 @@ void GPlayer::Update()
 	s += std::to_string(m_position.X);
 	s += ", Y: ";
 	s += std::to_string(m_position.Y);
-	LOG_ERROR("", s.c_str());
+	LOG_ERROR(s.c_str(), "" );
 }
 
 // render every frame
