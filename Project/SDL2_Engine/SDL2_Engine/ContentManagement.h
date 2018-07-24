@@ -73,7 +73,8 @@ public:
 	/// <summary>
 	/// update every frame
 	/// </summary>
-	void Update();
+	/// <param name="_deltaTime">time since last frame</param>
+	void Update(float _deltaTime);
 
 	/// <summary>
 	/// render every frame
