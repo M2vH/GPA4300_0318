@@ -10,6 +10,7 @@ class SDL_Surface;
 class CRenderer;
 class CScene;
 class CContentManagement;
+class CTime;
 #pragma endregion
 
 /// <summary>
@@ -55,6 +56,12 @@ public:
 	/// </summary>
 	/// <returns></returns>
 	inline CContentManagement* GetCM() { return m_pCM; }
+
+	/// <summary>
+	/// get time class
+	/// </summary>
+	/// <returns>time class</returns>
+	inline CTime* GetTime() { return m_pTime; }
 #pragma endregion
 
 #pragma region public function
@@ -120,6 +127,11 @@ private:
 	/// active scene
 	/// </summary>
 	CScene* m_pScene;
+
+	/// <summary>
+	/// time
+	/// </summary>
+	CTime* m_pTime;
 #pragma enregion
 
 #pragma region private function

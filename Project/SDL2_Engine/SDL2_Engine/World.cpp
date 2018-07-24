@@ -124,6 +124,7 @@ void GWorld::Init()
 			pPlayer->SetSpeed(PLAYER_SPEED);
 			pPlayer->SetMirror(PLAYER_MIRROR);
 			pPlayer->SetColType(ECollisionType::MOVE);
+			pPlayer->ActivateGravity();
 
 			// add player to persistant list
 			CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
