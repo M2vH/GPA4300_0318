@@ -62,7 +62,8 @@ public:
 	/// <summary>
 	/// update every frame
 	/// </summary>
-	virtual void Update() override;
+	/// <param name="_deltaTime">time since last frame</param>
+	virtual void Update(float _deltaTime) override;
 
 	/// <summary>
 	/// render every frame

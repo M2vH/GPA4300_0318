@@ -5,25 +5,16 @@
 #include "Player.h"
 #include "Input.h"
 #include "Engine.h"
+#include "ContentManagement.h"
+#include "Physic.h"
 #include "Renderer.h"
+#include "Time.h"	///TODO: DELETE
 #pragma endregion
 
 #pragma region public override function
 // update every frame
-void GPlayer::Update()
+void GPlayer::Update(float _deltaTime)
 {
-	// movement up
-	if (CInput::GetKey(SDL_SCANCODE_W))
-		m_movement.Y = -1.0f;
-
-	// movement down
-	else if (CInput::GetKey(SDL_SCANCODE_S))
-		m_movement.Y = 1.0f;
-
-	// no movement up and down
-	else
-		m_movement.Y = 0.0f;
-
 	// movement left
 	if (CInput::GetKey(SDL_SCANCODE_A))
 	{
@@ -44,8 +35,93 @@ void GPlayer::Update()
 	else
 		m_movement.X = 0.0f;
 
+	// if key space is pressed this frame and jump not active and grounded
+	if (CInput::GetKeyDown(SDL_SCANCODE_SPACE) && !m_jump && m_grounded)
+	{
+		// set jump enable, gravity false and set jump time
+		m_jump = true;
+		m_jumpTime = PLAYER_JUMP_TIME;
+		m_gravity = false;
+	}
+
 	// update parent
-	CMoveObject::Update();
+	CMoveObject::Update(_deltaTime);
+
+	// if jump enabled
+	if(m_jump)
+	{
+		// decrease jump time
+		m_jumpTime -= _deltaTime;
+
+		// if jump time under 0
+		if (m_jumpTime <= 0.0f)
+		{
+			// deactivate jump and activate gravity
+			m_jump = false;
+			m_gravity = true;
+		}
+
+		// moveable default true
+		bool moveable = true;
+
+		// next position
+		SVector2 nextPos = m_position;
+		nextPos.Y -= PLAYER_JUMP_FORCE * _deltaTime;
+
+		// next rect
+		SRect nextRect = m_rect;
+		nextRect.x = nextPos.X;
+		nextRect.y = nextPos.Y;
+
+		// through all scene objects
+		for (CObject* pObj : CEngine::Get()->GetCM()->GetSceneObjects())
+		{
+			// if current object is self continue
+			if ((CMoveObject*)pObj && pObj == this)
+				continue;
+
+			// if collision type none
+			if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
+				continue;
+
+			// set moveable by checking collision
+			moveable = !CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
+
+			// if not moveable cancel collision check
+			if (!moveable)
+				break;
+		}
+
+		// if moveable
+		if (moveable)
+		{
+			// through all persistant objects
+			for (CObject* pObj : CEngine::Get()->GetCM()->GetPersistantObjects())
+			{
+				// if current object is self continue
+				if ((CMoveObject*)pObj && pObj == this)
+					continue;
+
+				// if collision type none
+				if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
+					continue;
+
+				// set moveable by checking collision
+				moveable = !CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
+
+				// if not moveable cancel collision check
+				if (!moveable)
+					break;
+			}
+		}
+
+		// if still moveable set y position
+		if (moveable)
+		{
+			m_position.Y -= PLAYER_JUMP_FORCE * _deltaTime;
+			m_rect.y = m_position.Y;
+		}
+	}
 
 	// set position of camera
 	CEngine::Get()->GetRenderer()->SetCamera(
@@ -56,9 +132,7 @@ void GPlayer::Update()
 	/// TODO: DELETE
 	/// </summary>
 	// print player position
-	std::string s = "Player position: X: ";
-	s += std::to_string(m_position.X);
-	s += ", Y: ";
+	std::string s = "Position Y: ";
 	s += std::to_string(m_position.Y);
 	LOG_ERROR(s.c_str(), "" );
 }

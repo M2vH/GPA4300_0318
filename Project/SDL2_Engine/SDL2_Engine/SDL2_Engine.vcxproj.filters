@@ -41,6 +41,9 @@
     <ClCompile Include="Physic.cpp">
       <Filter>Engine\Physic</Filter>
     </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Engine\Time</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -90,6 +93,9 @@
     </Filter>
     <Filter Include="Engine\Physic">
       <UniqueIdentifier>{25468902-10eb-451a-9001-a0e1a8193d0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Time">
+      <UniqueIdentifier>{867bee15-8b50-4c5d-a022-86394f6dce94}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +155,9 @@
     </ClInclude>
     <ClInclude Include="Physic.h">
       <Filter>Engine\Physic</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Engine\Time</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
