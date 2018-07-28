@@ -1,25 +1,27 @@
 #pragma once
 #pragma region project include
 #include "Object.h"
+#include "TexturedObject.h"
 #include "Rect.h"
 #pragma endregion
 
 #pragma region forward decleration
 class CRenderer;
 class CTexture;
+class CTexturedObject;
 #pragma endregion
 
 /// <summary>
 /// textured object class
 /// </summary>
-class CTexturedObject :	public CObject
+class CTexturedObjectSlide :	public CTexturedObject
 {
 public:
 #pragma region constructor
 	/// <summary>
 	/// constructor
 	/// </summary>
-	CTexturedObject() : CObject() {}
+	CTexturedObjectSlide() : CTexturedObject() {}
 	
 	/// <summary>
 	/// constructor

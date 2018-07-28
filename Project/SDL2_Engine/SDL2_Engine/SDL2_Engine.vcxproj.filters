@@ -23,7 +23,10 @@
     <ClCompile Include="Game.cpp">
       <Filter>Game\Core</Filter>
     </ClCompile>
-    <ClCompile Include="TexturedObject.cpp">
+    <ClCompile Include="TexturedObjectSlide.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\SAEStudyWeek\WoF_Prototype\Project\WorldOfFacades\TexturedObject.cpp">
       <Filter>Engine\Object</Filter>
     </ClCompile>
   </ItemGroup>
@@ -99,7 +102,10 @@
     <ClInclude Include="Game.h">
       <Filter>Game\Core</Filter>
     </ClInclude>
-    <ClInclude Include="TexturedObject.h">
+    <ClInclude Include="TexturedObjectSlide.h">
+      <Filter>Engine\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\SAEStudyWeek\WoF_Prototype\Project\WorldOfFacades\TexturedObject.h">
       <Filter>Engine\Object</Filter>
     </ClInclude>
   </ItemGroup>

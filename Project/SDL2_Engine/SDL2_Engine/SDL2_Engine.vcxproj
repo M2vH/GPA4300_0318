@@ -173,6 +173,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\SAEStudyWeek\WoF_Prototype\Project\WorldOfFacades\TexturedObject.cpp" />
     <ClCompile Include="CContentManagement.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -181,9 +182,10 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="TexturedObject.cpp" />
+    <ClCompile Include="TexturedObjectSlide.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\SAEStudyWeek\WoF_Prototype\Project\WorldOfFacades\TexturedObject.h" />
     <ClInclude Include="ContentManagement.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Game.h" />
@@ -194,7 +196,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Texture.h" />
-    <ClInclude Include="TexturedObject.h" />
+    <ClInclude Include="TexturedObjectSlide.h" />
     <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
